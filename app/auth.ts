@@ -18,13 +18,13 @@ export const {
         let user = await getUser(email, password);
         // console.log({ p:"p",user })
         if (user != null && user.access_token != null) {
-          // console.log("if", email, user, user.access_token)
+          console.log("if", email, user, user.access_token)
           user.email = email
           user.name = user.access_token
           return user
         }
         else{
-          // console.log("else", email)
+          console.log("else", email)
           return null
         }
       },
