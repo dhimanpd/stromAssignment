@@ -10,7 +10,7 @@ export default async function ProtectedPage() {
   console.log("P@", session)
   return (
     <div className="flex h-screen bg-black">
-      <div className="w-screen h-screen flex flex-col space-y-5 justify-center items-center text-white">
+      <div className="w-screen h-screen flex flex-col space-y-5 justify-center items-center text-stone-600">
         You are logged in as {session?.user?.email}
 
         <ChatBox token={session?.user?.name}/>
@@ -28,7 +28,7 @@ function SignOut() {
         await signOut();
       }}
     >
-      <button type="submit">Sign out</button>
+      <button type="submit" className="rounded-2xl p-5 bg-slate-300 mx-2">Sign out</button>
     </form>
   );
 }

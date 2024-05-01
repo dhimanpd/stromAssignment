@@ -79,10 +79,13 @@ export default function ChatBox({token}) {
   });
 
   return (
+    <div className="flex">
     <div className={styles.chatHolder}>
       <div className={styles.chatText}>
         {messages}
-        <div ref={(element) => { messageEnd = element; }}></div>
+        <div ref={(element) => { messageEnd = element; }}
+       
+        style={{ width: "800px" }}></div>
       </div>
       <form onSubmit={handleFormSubmission} className={styles.form}>
         <textarea
@@ -91,10 +94,11 @@ export default function ChatBox({token}) {
           placeholder="Type a message..."
           onChange={e => setMessageText(e.target.value)}
           onKeyPress={handleKeyPress}
-          className={styles.textarea}
+          className="rounded-2xl p-7"
         ></textarea>
-        <button type="submit" className={styles.button} disabled={messageTextIsEmpty}>Send </button>
+      <button type="submit" className="rounded-2xl bg-slate-300 mx-2" disabled={messageTextIsEmpty}>Send </button>
       </form>
+    </div>
     </div>
   )
 }

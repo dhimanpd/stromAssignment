@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Form } from 'app/form';
-import { signIn } from 'app/auth';
+import { signIn} from 'app/auth';
 import { SubmitButton } from 'app/submit-button';
-
+import { AuthError } from "next-auth";
 
 export default function Login() {
   return (
@@ -25,10 +25,14 @@ export default function Login() {
                 password: formData.get('password') as string,
               });        
             } catch (error) {
+              var getClassOf = Function.prototype.call.bind(Object.prototype.toString);
+              console.log("Class", getClassOf(error))
               console.log({E:"e",error})
               console.log("Invalid Creds")
-              if (error.type != null && error.type ==  "CredentialsSignin" ){
+              if (error instanceof AuthError ){
+                if (error.type != null && error.type ==  "CredentialsSignin"){
 
+                }
               }else{
                 throw error;
               }
