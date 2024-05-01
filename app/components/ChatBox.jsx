@@ -33,7 +33,7 @@ export default function ChatBox({token}) {
       redirect: "follow"
     };
     
-    return fetch("http://0.0.0.0:8000/api/llm/", requestOptions)
+    return fetch("http://165.22.64.171:8000/api/llm/", requestOptions)
 
   }
 
