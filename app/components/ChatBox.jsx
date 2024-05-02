@@ -33,7 +33,7 @@ export default function ChatBox({token}) {
       redirect: "follow"
     };
     
-    return fetch(`${process.env.NGURL}api/llm/`, requestOptions)
+    return fetch(`${process.env.NEXT_PUBLIC_NGURL}api/llm/`, requestOptions)
 
   }
 
