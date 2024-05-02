@@ -33,7 +33,7 @@ export default function ChatBox({token}) {
       redirect: "follow"
     };
     
-    return fetch("https://c523-165-22-64-171.ngrok-free.app/api/llm/", requestOptions)
+    return fetch(`${process.env.NGURL}api/llm/`, requestOptions)
 
   }
 
