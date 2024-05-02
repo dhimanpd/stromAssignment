@@ -25,7 +25,7 @@ export async function getUser(email: string, password:string) {
     // redirect: "follow" 
   };
   
-  return await fetch("http://165.22.64.171:8000/api/auth/jwt/login", requestOptions)
+  return await fetch("https://c523-165-22-64-171.ngrok-free.app/api/auth/jwt/login", requestOptions)
   .then((response) => response.json())
     .then((result) => {return result})
     .catch((error) => {return null;});
